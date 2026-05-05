@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "jmci"
+version = "0.1.0"
+
+description = "A high-level encapsulation of jmcomic."
+readme = "README.md"
+
+requires-python = ">=3.12.0"
+dependencies = [
+    "beartype>=0.22.9",
+    "img2pdf>=0.6.3",
+    "jmcomic>=2.6.18",
+    "rich>=15.0.0",
+    "typer>=0.24.1",
+]
+
+authors = [
+    { name = "MutableMappingSequence", email = "3863887959@qq.com" }
+]
+
+keywords = ["jmcomic", "jm", "comic", "downloader", "api", "encapsulation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Utilities"
+]
+
+
+[project.scripts]
+jmci = "jmci.cli:main"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jmci"]
+
+[dependency-groups]
+dev = [
+    "sphinx>=9.1.0",
+    "sphinx-autobuild>=2025.8.25",
+    "sphinx-autodoc-typehints>=3.10.2",
+    "sphinx-rtd-theme>=3.1.0",
+]
+
+
+[project.urls]
+# TODO
+Repository = "https://github.com/MutableMappingSequence/jmci.git"
+Homepage = "https://github.com/MutableMappingSequence/jmci.git"
