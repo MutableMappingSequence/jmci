@@ -34,7 +34,7 @@ __all__ = ["enable_logging"]
 
 
 logging: bool = True
-console = Console(highlight=False)
+_console = Console(highlight=False)
 
 
 @beartype
@@ -65,7 +65,7 @@ def log(
             color = "[yellow]"
         case "ERROR":
             color = "[red]"
-    console.print(
+    _console.print(
         Columns(
             [
                 Align.left(
@@ -119,7 +119,6 @@ __RE_NEW_OLD_DOMAINS = re.compile(r"\(new\)\[(?P<new>.*)\].*\[(?P<old>.*)\]")
 __RE_DOMAIN = re.compile(r"\'(.+)\'")
 __RE_PHOTO_PROCESS = re.compile(r"\((?P<id>\d+)\[(?P<finished>\d+)/(?P<total>\d+)\]\)")
 __RE_PROCESS = re.compile(r"\[(?P<finished>\d+)/(?P<total>\d+)\]")
-__RE_ALBUM_ID = re.compile(r"\[(?P<id>\d+)\]")
 
 
 # Override the original logger of jmcomic.

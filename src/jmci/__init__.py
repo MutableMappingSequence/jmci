@@ -12,4 +12,4 @@ from .logger import enable_logging as enable_logging   # noqa: F401
 from .search import *                                  # noqa: F401
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.0.2"
